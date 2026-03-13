@@ -1,16 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Ride</title>
 
-<h1>Book a Ride</h1>
+    <style>
 
-<form class="ride-form">
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email">
-<select>
-<option>Select Car</option>
-<option>Lamborghini</option>
-<option>Ferrari</option>
-<option>Bugatti</option>
-</select>
+        body {
+            background: linear-gradient(135deg,#0f172a,#020617);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-<input type="date">
-<button>Confirm Ride</button>
-</form>
+        .ride-container {
+            background: #111827;
+            padding: 40px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255,106,0,0.5);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff6a00;
+        }
+
+        .ride-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .ride-form input,
+            .ride-form select {
+                padding: 12px;
+                margin-bottom: 15px;
+                border: none;
+                border-radius: 6px;
+                background: #1f2937;
+                color: white;
+                font-size: 15px;
+            }
+
+                .ride-form input:focus,
+                .ride-form select:focus {
+                    outline: none;
+                    box-shadow: 0 0 10px #ff6a00;
+                }
+
+        button {
+            background: #ff6a00;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            button:hover {
+                background: #ff4500;
+                transform: scale(1.05);
+            }
+
+        .success {
+            text-align: center;
+            margin-top: 15px;
+            color: #22c55e;
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="ride-container">
+
+        <h1>Book a Ride</h1>
+
+        <form class="ride-form" onsubmit="bookRide(event)">
+
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <input type="email" id="email" placeholder="Email Address" required>
+
+            <select id="car" required>
+                <option value="">Select Car</option>
+                <option>Lamborghini Aventador</option>
+                <option>Ferrari 488</option>
+                <option>Bugatti Chiron</option>
+                <option>Nissan GTR</option>
+                <option>McLaren P1</option>
+            </select>
+
+            <input type="date" id="date" required>
+
+            <button type="submit">Confirm Ride</button>
+
+        </form>
+
+        <p class="success" id="successMsg">🚗 Ride Booked Successfully!</p>
+
+    </div>
+
+    <script>
+
+        function bookRide(e){
+
+        e.preventDefault()
+
+        let name=document.getElementById("name").value
+        let car=document.getElementById("car").value
+
+        if(name=="" || car==""){
+        alert("Please fill all details")
+        return
+        }
+
+        document.getElementById("successMsg").style.display="block"
+
+        }
+
+    </script>
+
+</body>
+</html>
