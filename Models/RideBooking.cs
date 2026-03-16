@@ -1,15 +1,22 @@
-namespace GIT_Practice.Models  // Exact namespace!
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace GIT_Practice.Models
 {
     public class RideBooking
     {
         public int Id { get; set; }
 
-        public required string Name { get; set; }
+        [Required]
+        public string Name { get; set; }
 
-        public required string Email { get; set; }
+        [Required]
+        public string Email { get; set; }
 
-        public required string Car { get; set; }
+        [Required]
+        public string Car { get; set; }
 
-        public DateTime RideDate { get; set; } // from step 1 if you add it
+        [Required]
+        public DateTime RideDate { get; set; }
     }
 }

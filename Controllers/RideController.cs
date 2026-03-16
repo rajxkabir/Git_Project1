@@ -28,7 +28,7 @@ namespace GIT_Practice.Controllers
                 _context.RideBookings.Add(ride);
                 _context.SaveChanges();
 
-                return RedirectToAction("Success");
+                return RedirectToAction("Success", "Ride");
             }
 
             // If validation fails return to booking form
