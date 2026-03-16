@@ -21,7 +21,7 @@ namespace GIT_Practice.Controllers
 
         // Save ride booking
         [HttpPost]
-        public IActionResult BookRider(RideBooking ride)
+        public IActionResult BookCar(RideBooking ride)
         {
             if (ModelState.IsValid)
             {

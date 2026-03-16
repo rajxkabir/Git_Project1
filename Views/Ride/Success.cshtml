@@ -1,5 +1,87 @@
-﻿<h2>Ride Booked Successfully 🚗</h2>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ride Confirmed</title>
 
-<p>Your Forza Horizon ride has been confirmed.</p>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff4b2b, #ff416c, #1f1c2c);
+            background-size: 400% 400%;
+            animation: gradientMove 10s infinite alternate;
+        }
 
-<a href="/">Go Back Home</a>
+        @@keyframes gradientMove {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+
+        .success-card {
+            background: rgba(0,0,0,0.75);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 0 40px rgba(255,0,0,0.6);
+            width: 420px;
+        }
+
+        .success-card h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+
+        .success-card p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-home {
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 30px;
+            background: linear-gradient(45deg,#ff0000,#ff9900);
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ff9900;
+        }
+
+        .car-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="success-card">
+
+        <div class="car-icon">🏎️</div>
+
+        <h2>Ride Booked Successfully</h2>
+
+        <p>
+            Your <strong>Forza Horizon</strong> ride has been confirmed.<br>
+            Get ready for an amazing driving experience!
+        </p>
+
+        <a class="btn-home" href="/">🏠 Go Back Home</a>
+
+    </div>
+
+</body>
+</html>
