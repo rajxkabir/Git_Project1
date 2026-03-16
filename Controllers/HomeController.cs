@@ -15,10 +15,11 @@ namespace GIT_Practice.Controllers
 
         public IActionResult Index()
         {
+            Console.WriteLine("loaded this ");
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }

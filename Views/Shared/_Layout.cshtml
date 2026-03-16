@@ -1,28 +1,33 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Froza Horizon Warzone</title>
-
-        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Froza Horizon Warzone</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 </head>
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            FROZA <span class="logo-accent">WARZONE</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
+            <li><a asp-controller="Ride" asp-action="BookRide" class="nav-link">Book Ride</a></li>
+            <li><a asp-controller="Home" asp-action="About" class="nav-link">About</a></li>
+            <li><a asp-controller="Auth" asp-action="Login" class="nav-link">Login</a></li>
+            <li><a asp-controller="Auth" asp-action="Logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
 
-<nav class="navbar">
-<div class="logo">FROZA <span>WARZONE</span></div>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/Home/BookRide">Book Ride</a></li>
-<li><a href="/Home/About">About</a></li>
-<li><a href="/Auth/Login">Login</a></li>
-<li><a href="/Auth/Logout">Logout</a></li>
-</ul>
-</nav>
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        @RenderBody()
+    </div>
 
-<div class="content">
-@RenderBody()
-</div>
+    <!-- SCRIPTS -->
     <script src="~/js/script.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

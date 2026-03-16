@@ -1,0 +1,13 @@
+﻿@using GIT_Practice.Models
+@model List<Review>
+
+<h2>Player Reviews</h2>
+
+@foreach (var review in Model)
+{
+    <div class="review-card">
+        <h4>@review.UserName</h4>
+        <p>@review.Comment</p>
+        <p>Rating: @review.Rating ⭐</p>
+    </div>
+}

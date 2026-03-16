@@ -1,0 +1,26 @@
+@model IEnumerable<GIT_Practice.Models.RideBooking>
+
+    <h1>Ride Bookings</h1>
+
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Car</th>
+            <th>Date</th>
+        </tr>
+
+        @foreach(var ride in Model)
+{
+        <tr>
+
+            <td>@ride.Name</td>
+            <td>@ride.Email</td>
+            <td>@ride.Car</td>
+            <td>@ride.RideDate</td>
+
+        </tr>
+}
+
+    </table>
