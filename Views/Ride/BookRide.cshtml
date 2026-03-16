@@ -88,11 +88,11 @@
 
         <form class="ride-form" asp-controller="Ride" asp-action="BookRider" method="post">
 
-            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="name" name="Name" placeholder="Your Name" required>
 
-            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="email" id="email" name="Email" placeholder="Email Address" required>
 
-            <select id="car" required>
+            <select id="car" name="Car" required>
                 <option value="">Select Car</option>
                 <option>Lamborghini Aventador</option>
                 <option>Ferrari 488</option>
@@ -101,7 +101,7 @@
                 <option>McLaren P1</option>
             </select>
 
-            <input type="date" id="date" required>
+            <input type="date" id="date" name="RideDate" required>
 
             <button type="submit">Confirm Ride</button>
 
