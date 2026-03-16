@@ -18,6 +18,7 @@ namespace GIT_Practice.Controllers
             Console.WriteLine("loaded this ");
             return View();
         }
+          
 
         public IActionResult About()
         {
