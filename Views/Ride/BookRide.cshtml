@@ -7,27 +7,40 @@
     <style>
 
         body {
-            background: linear-gradient(135deg,#0f172a,#020617);
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI',sans-serif;
+            background: linear-gradient(135deg,#020617,#0f172a,#1e293b);
+            background-size: 400% 400%;
+            animation: bgMove 8s infinite alternate;
+        }
+
+        @@keyframes bgMove {
+            0% {
+                background-position: left;
+            }
+
+            100% {
+                background-position: right;
+            }
         }
 
         .ride-container {
             background: #111827;
-            padding: 40px;
-            width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 0 25px rgba(255,106,0,0.5);
+            padding: 45px;
+            width: 420px;
+            border-radius: 15px;
+            box-shadow: 0 0 35px rgba(255,106,0,0.6);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             margin-bottom: 30px;
             color: #ff6a00;
+            letter-spacing: 1px;
         }
 
         .ride-form {
@@ -37,10 +50,10 @@
 
             .ride-form input,
             .ride-form select {
-                padding: 12px;
-                margin-bottom: 15px;
+                padding: 13px;
+                margin-bottom: 16px;
                 border: none;
-                border-radius: 6px;
+                border-radius: 8px;
                 background: #1f2937;
                 color: white;
                 font-size: 15px;
@@ -49,23 +62,24 @@
                 .ride-form input:focus,
                 .ride-form select:focus {
                     outline: none;
-                    box-shadow: 0 0 10px #ff6a00;
+                    box-shadow: 0 0 12px #ff6a00;
                 }
 
         button {
-            background: #ff6a00;
+            background: linear-gradient(45deg,#ff6a00,#ff3c00);
             border: none;
-            padding: 12px;
+            padding: 13px;
             font-size: 16px;
             color: white;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
+            font-weight: bold;
         }
 
             button:hover {
-                background: #ff4500;
-                transform: scale(1.05);
+                transform: scale(1.08);
+                box-shadow: 0 0 20px #ff6a00;
             }
 
         .success {
@@ -73,30 +87,23 @@
             margin-top: 15px;
             color: #22c55e;
             display: none;
-
         }
-
     </style>
-
 </head>
 
 <body>
 
     <div class="ride-container">
 
-        <h1>Book a Ride</h1>
+        <h1>🚗 Book Your Ride</h1>
 
         <form class="ride-form" asp-controller="Ride" asp-action="BookCar" method="post">
 
-            <input type="text" id="name" name="Name" placeholder="Your Name" required>
+            <input type="text" name="Name" placeholder="Your Name" required>
 
-            <input type="email" id="email" name="Email" placeholder="Email Address" required>
+            <input type="email" name="Email" placeholder="Email Address" required>
 
-<<<<<<< HEAD
-            <select id="car" name="CarName" required>
-=======
-            <select id="car" name="Car" required>
->>>>>>> 3086b0499646a87ba259de60d0b5f6ff52d0dcd9
+            <select name="CarName" required>
                 <option value="">Select Car</option>
                 <option>Lamborghini Aventador</option>
                 <option>Ferrari 488</option>
@@ -105,35 +112,13 @@
                 <option>McLaren P1</option>
             </select>
 
-            <input type="date" id="date" name="RideDate" required>
+            <input type="date" name="RideDate" required>
 
             <button type="submit">Confirm Ride</button>
 
         </form>
 
-        <p class="success" id="successMsg">🚗 Ride Booked Successfully!</p>
-
     </div>
-
-    <script>
-
-        function bookRide(e){
-
-        e.preventDefault()
-
-        let name=document.getElementById("name").value
-        let car=document.getElementById("car").value
-
-        if(name=="" || car==""){
-        alert("Please fill all details")
-        return
-        }
-
-        document.getElementById("successMsg").style.display="block"
-
-        }
-
-    </script>
 
 </body>
 </html>
